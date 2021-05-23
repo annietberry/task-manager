@@ -11,8 +11,8 @@ function _draw() {
 
   lists.forEach(list => {
     let tasks = ProxyState.tasks.filter(task => task.list == list.id)
-    template += ` <div class="col-3 m-3 bg-success px-0 shadow p-3 mb-5 bg-white rounded">
-      <div class="bg-primary text-dark">
+    template += ` <div class="col-3 m-3 bg-success px-0 shadow p-3 mb-5 bg-white rounded" >
+      <div class="bg-success text-dark" style=' background-color: ${list.color} !important'>
           ${list.name}
           <span>completed</span>
           <span>/</span>
