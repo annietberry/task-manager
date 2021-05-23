@@ -66,12 +66,11 @@
                         </li>
                     </ul>
 
-                    <form onsubmit="app.tasksController.createTask(event, 'listId')">
+                    <form onsubmit="app.tasksController.addTask(event, 'listId')">
                         <label for="name"></label>
                         <input required minlength="3" maxlength="50" type="text" name="name" id="taskname"
                             class="form-control" placeholder="" aria-describedby="helpId">
-                        <button class="btn btn-primary btn-block text-dark mt-1"
-                            onclick="app.listsController.completeTask('${list.id}')"> Add task</button>
+                        <button type="submit" class="btn btn-primary btn-block text-dark mt-1"> Add task</button>
                     </form>
                 </div>
             </div>
@@ -79,7 +78,6 @@
         </div>
 
         <!-- <div id="app"></div> -->
-        <script src="app/main.js" type="module"></script>
     </main>
 
     <footer class="container-fluid bg-dark text-light">

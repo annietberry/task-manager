@@ -7,11 +7,11 @@ function _draw() {
   console.log('drawing your lists')
   let lists = ProxyState.lists
   let listElm = document.getElementById('lists')
-    let template = ''
+  let template = ''
 
-    lists.forEach(list => {
-      let tasks = ProxyState.tasks.filter(task => task.list == list.id)
-      template += ` <div class="col-3 m-3 bg-success px-0 shadow p-3 mb-5 bg-white rounded">
+  lists.forEach(list => {
+    let tasks = ProxyState.tasks.filter(task => task.list == list.id)
+    template += ` <div class="col-3 m-3 bg-success px-0 shadow p-3 mb-5 bg-white rounded">
       <div class="bg-primary text-dark">
           ${list.name}
           <span>completed</span>
@@ -25,8 +25,8 @@ function _draw() {
 
 
 
-      tasks.forEach(task => {
-        template += ` <li class="row align-items-center justify-content-between p-2">
+    tasks.forEach(task => {
+      template += ` <li class="row align-items-center justify-content-between p-2">
         <input type="checkbox" id=task1>
         <label for="task1">
             <div class="col d-flex ">${task.name}
@@ -35,24 +35,24 @@ function _draw() {
         <button class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
         <br>
     </li>`
-      })
+    })
 
-      template += `</ul>
+    template += `</ul>
 
-      <form onsubmit="app.tasksController.createTask(event, '${list.id}')">
+      <form onsubmit="app.tasksController.addTask(event, '${list.id}')">
           <label for="name"></label>
           <input required minlength="3" maxlength="50" type="text" name="name" id="" class="form-control"
               placeholder="" aria-describedby="helpId">
           <button class="btn btn-primary btn-block text-dark mt-1"
-              onclick="app.listsController.completeTask('${list.id}')"> Add task</button>
+              "> Add task</button>
       </form>
   </div>
   </div>
   `
 
 
-})
-listElm.innerHTML = template
+  })
+  listElm.innerHTML = template
 }
 
 

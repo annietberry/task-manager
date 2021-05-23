@@ -6,7 +6,7 @@ export default class TasksController {
 
   }
 
-  createTask(event, list) {
+  addTask(event, list) {
     event.preventDefault()
     console.log("create task is hitting")
     let form = event.target
@@ -14,6 +14,6 @@ export default class TasksController {
       name: form.name.value,
       list: list
     }
-    tasksService.createTask(newTask)
+    tasksService.addTask(newTask)
   }
 }

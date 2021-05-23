@@ -8,7 +8,7 @@ class TasksService {
 
   addTask(newTask) {
     console.log('task at service', newTask)
-    ProxyState.tasks = [...ProxyState.toppings, new Task(newTask)]
+    ProxyState.tasks = [...ProxyState.tasks, new Task(newTask)]
     console.log('all the tasks', ProxyState.tasks)
 
   }
