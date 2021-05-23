@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>task-master</title>
+</head>
+
+<body>
+    <header>
+        <nav class="row justify-content-center navbar navbar-dark navbar-expand bg-dark text-light">
+            <a class="navbar-brand" href="#">
+                <h1>Task Master</h1>
+            </a>
+        </nav>
+    </header>
+
+    <main class="container-fluid">
+        <!--List form-->
+        <form class="row mt-2" onsubmit="app.listsController.createList(event)">
+            <div class="col-4">
+
+                <label for="name" class="text-dark">Note Name</label>
+                <input required minlength="3" maxlength="15" type="text" name="name" id="name" class="form-control"
+                    placeholder="" aria-describedby="helpId">
+            </div>
+            <div class="col-4 mt-4 d-flex justify-content-center">
+                <label for="color" class="text-dark">Color</label>
+                <input required type="color" name="color" id="color">
+            </div>
+            <div class="col-4 mt-4 d-flex justify-content-center">
+                <button class=" col-3 btn btn-primary h-60 text-dark">Create</button>
+            </div>
+
+        </form>
+        <!--List Form-->
+        <div id="lists" class="row justify-content-around">
+            <!-- Notes go here-->
+            <!-- Note Template -->
+            <div class="col-3 m-3 bg-success px-0 shadow p-3 mb-5 bg-white rounded">
+                <div class="bg-primary text-dark">
+                    <b>List Name</b>
+                    <span>completed</span>
+                    <span>/</span>
+                    <span>total</span>
+                    <button class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i></button>
+                </div>
+                <div class="row justify-content-center py-1 card-body">
+                    <b class="col-12">Tasks:</b>
+                    <ul class="col-12">
+                        <li class="row align-items-center justify-content-between p-2">
+                            <input type="checkbox" id=task1>
+                            <label for="task1">
+                                <div class="col d-flex ">Task 1
+                                </div>
+                            </label>
+                            <button class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <br>
+                        </li>
+                    </ul>
+
+                    <form onsubmit="app.tasksController.createTask(event, 'listId')">
+                        <label for="name"></label>
+                        <input required minlength="3" maxlength="50" type="text" name="name" id="taskname"
+                            class="form-control" placeholder="" aria-describedby="helpId">
+                        <button class="btn btn-primary btn-block text-dark mt-1"
+                            onclick="app.listsController.completeTask('${list.id}')"> Add task</button>
+                    </form>
+                </div>
+            </div>
+            <!--END OF NOTE TEMPLATE-->
+        </div>
+
+        <!-- <div id="app"></div> -->
+        <script src="app/main.js" type="module"></script>
+    </main>
+
+    <footer class="container-fluid bg-dark text-light">
+        <div class="row text-center">
+            <div class="col">
+                <p><small>Get it done</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
