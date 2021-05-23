@@ -8,8 +8,8 @@ class ListsService {
     ProxyState.on('tasks', saveState)
   }
 
-  completeTask(listId) {
-    ProxyState.lists = ProxyState.lists.filter(list => list.id != listId)
+  removeList(listId) {
+    ProxyState.lists = ProxyState.lists.filter(l => l.id != listId)
     console.log(ProxyState.lists)
   }
 
@@ -17,6 +17,8 @@ class ListsService {
     ProxyState.lists = [...ProxyState.lists, new List(newList)]
     console.log("all your lists", ProxyState.lists)
   }
+
+
 }
 
 export const listsService = new ListsService()

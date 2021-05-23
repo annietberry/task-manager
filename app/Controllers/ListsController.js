@@ -17,7 +17,7 @@ function _draw() {
           <span>completed</span>
           <span>/</span>
           <span>total</span>
-          <button class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i></button>
+          <button onclick="app.listsController.removeList('${list.id}')" class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i></button>
       </div>
       <div class="row justify-content-center py-1 card-body">
           <b class="col-12">Tasks:</b>
@@ -78,6 +78,11 @@ export default class ListsController {
   completeTask(listId) {
     console.log('task completed', listId)
     listsService.completeTask(listId)
+  }
+
+  removeList(listId) {
+    console.log("list removed")
+    listsService.removeList(listId)
   }
 
 }
