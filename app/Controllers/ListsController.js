@@ -32,7 +32,7 @@ function _draw() {
             <div class="col d-flex ">${task.name}
             </div>
         </label>
-        <button class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <button onclick="app.tasksController.removeTask('${task.name}')" class="btn btn-primary"><i class="fa fa-trash" aria-hidden="true"></i></button>
         <br>
     </li>`
     })

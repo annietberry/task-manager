@@ -16,4 +16,9 @@ export default class TasksController {
     }
     tasksService.addTask(newTask)
   }
+
+  removeTask(taskName) {
+    console.log("task was removed")
+    tasksService.removeTask(taskName)
+  }
 }

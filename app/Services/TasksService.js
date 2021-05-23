@@ -12,6 +12,11 @@ class TasksService {
     console.log('all the tasks', ProxyState.tasks)
 
   }
+
+  removeTask(taskName) {
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.name != taskName)
+    console.log("task removed")
+  }
 }
 
 export const tasksService = new TasksService()
