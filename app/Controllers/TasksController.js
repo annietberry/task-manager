@@ -21,4 +21,22 @@ export default class TasksController {
     console.log("task was removed")
     tasksService.removeTask(taskName)
   }
+
+
+  // checkBoxes() {
+  //   var inputElems = document.getElementById("input")
+
+  //   for (var i = 0; i < inputElems.length; i++) {
+  //     if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+  //       count
+  //       count++;
+  //     }
+  //   }
+  // }
+
+  checkBoxes() {
+    if (document.getElementById('input').checked == true) {
+      var checkCount = checkCount++
+    }
+  }
 }

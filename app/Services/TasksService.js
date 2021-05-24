@@ -17,6 +17,8 @@ class TasksService {
     ProxyState.tasks = ProxyState.tasks.filter(t => t.name != taskName)
     console.log("task removed")
   }
+
+
 }
 
 export const tasksService = new TasksService()
